@@ -5,12 +5,10 @@ export const SUCCESS_FRIENDS = 'SUCCESS_FRIENDS';
 export const FAILURE_FRIENDS = 'FAILURE_FRIENDS';
 
 export const getFriends = () => dispatch => {
-    dispatch({ type: FETCHING_FRIENDS });
-
+    dispatch({ type: FETCHING_FRIENDS })
     axios
     .get('http://localhost:5000/api/friends')
     .then(response => {
-        console.log(response);
         dispatch({
             type: SUCCESS_FRIENDS,
             payload: response.data

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { FriendsList } from "../components";
+import FriendsList  from "../components/FriendsList";
 import { getFriends } from "../actions";
 
 class FriendsListView extends React.Component {
@@ -14,6 +14,7 @@ class FriendsListView extends React.Component {
     }
   
     render() {
+
       if (this.props.fetching) {
         return <p>Loading Friends...</p>
       }
@@ -26,7 +27,6 @@ class FriendsListView extends React.Component {
   }
   
   function mapStateToProps(state) {
-    console.log(state);
     return{
       friends: state.friendReducer.friends,
       fetching: state.friendReducer.fetching

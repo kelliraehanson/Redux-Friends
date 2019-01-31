@@ -10,15 +10,16 @@ import {
     error: null
    
   };
-  export const friendReducer = (state = initialState, action) => {
+  const friendReducer = (state = initialState, action) => {
     switch (action.type) {
       case FETCHING_FRIENDS:
       return {
         ...state,
         fetching: true,
-        error: null
+        // error: null
       };
       case SUCCESS_FRIENDS:
+      console.log(action.payload)
       return {
         ...state,
         friends: action.payload,
@@ -36,4 +37,6 @@ import {
         return state;
     }
   };
+
+  export default friendReducer;
   

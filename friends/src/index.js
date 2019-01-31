@@ -5,12 +5,12 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import friendReducer from './reducers';
+import { createStore, applyMiddleware, compose } from 'redux';
+import rootReducer from './reducers';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 
-const store = createStore(friendReducer, applyMiddleware(thunk, logger));
+const store = createStore(rootReducer, compose(applyMiddleware(thunk, logger), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
 
 ReactDOM.render(
     <Provider store={store}>
