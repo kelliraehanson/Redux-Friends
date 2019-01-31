@@ -4,13 +4,11 @@ const Friends = props => {
   return(
     <div>
       <h2>{props.friend.name}</h2>
-      <p>{props.friend.age}</p>
+      <p>AGE: {props.friend.age}</p>
+      <p>EMAIL: {props.friend.email}</p>
+      <button>DELETE</button>
     </div>
   )
 }
-
-// const Friend = props => {
-//   return <li>{props.friend.name}</li>;
-// };
 
 export default Friends;

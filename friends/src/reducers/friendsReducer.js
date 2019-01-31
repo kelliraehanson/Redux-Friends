@@ -1,7 +1,11 @@
 import {
     FETCHING_FRIENDS,
     SUCCESS_FRIENDS,
-    FAILURE_FRIENDS
+    FAILURE_FRIENDS,
+    ADD_FRIENDS,
+    ADD_FRIENDS_SUCCESS,
+    ADD_FRIENDS_FAILURE
+
   } from "../actions";
    
   const initialState = {
@@ -27,6 +31,24 @@ import {
         error: null
       }
       case FAILURE_FRIENDS:
+      return {
+        ...state,
+        error: action.payload,
+        fetching: false
+      }
+      case ADD_FRIENDS:
+      return {
+      ...state,
+      fetching: true
+      };
+      case ADD_FRIENDS_SUCCESS:
+      return {
+        ...state,
+        friends: action.payload,
+        error: null,
+        fetching: false
+      }
+      case ADD_FRIENDS_FAILURE:
       return {
         ...state,
         error: action.payload,

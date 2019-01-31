@@ -1,5 +1,11 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  background-color: #DCC6C6;
+
 }
 
 .App-logo {
@@ -29,4 +35,43 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+input { 
+  width: 300px;
+  height: 35px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  background-color: #CEAAAA;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: 1px solid white;
+}
+
+button {
+width: 300px;
+height: 35px;
+margin-top: 20px;
+border-radius: 10px;
+cursor: pointer;
+background-color: #CEAAAA;
+color: white;
+font-weight: bold;
+letter-spacing: 1px;
+border: 1px solid white;
+}
+
+h2 {
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 3px 3px 3px #CEAAAA;
+}
+
+p {
+  color: white;
+  text-shadow: 3px 3px 3px #CEAAAA;
+  letter-spacing: 1px;
+
 }
