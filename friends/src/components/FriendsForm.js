@@ -18,9 +18,13 @@ changeHandler = event => {
 
 submitHandler = event => {
     event.preventDefault();
-    console.log('button clicked');
     this.props.addFriends(this.state);
 };
+
+deleteFriend = event => {
+    event.preventDefault();
+    this.props.deleteFriend(event.target.name);
+}
 
 render() {
     return (

@@ -4,7 +4,11 @@ import {
     FAILURE_FRIENDS,
     ADD_FRIENDS,
     ADD_FRIENDS_SUCCESS,
-    ADD_FRIENDS_FAILURE
+    ADD_FRIENDS_FAILURE,
+    DELETE_FRIEND,
+    DELETE_FRIEND_SUCCESS,
+    DELETE_FRIEND_FAILURE
+
 
   } from "../actions";
    
@@ -53,6 +57,23 @@ import {
         ...state,
         error: action.payload,
         fetching: false
+      }
+      case DELETE_FRIEND:
+      return {
+        ...state,
+        deleteFriend: true,
+      }
+      case DELETE_FRIEND_SUCCESS:
+      return {
+        ...state,
+        deleteFriend: false,
+        friends: [...action.payload]
+      }
+      case DELETE_FRIEND_FAILURE:
+      return {
+        ...state,
+        deleteFriend: false,
+        error: action.payload
       }
      
       default:

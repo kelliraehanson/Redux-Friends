@@ -1,6 +1,8 @@
 import React from "react";
 import Friends from "./Friends";
 
+// import { deleteFriend } from '../actions';
+
 
 const FriendsList = props => {
   console.log(props.friends)
@@ -10,7 +12,6 @@ const FriendsList = props => {
         return <Friends 
         key={friend.name} 
         friend={friend} 
-        // deleteFriend={props.deleteFriend.bind(null, friend.id)}
         />;
       })}
     </ul>
